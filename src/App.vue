@@ -1,15 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <!-- ... -->
+    <button type="button" @click="openDialog">
+      Open dialog
+    </button>
+    <a11y-dialog
+        id="app-dialog"
+        app-root="#app"
+        dialog-root="#dialog-root"
+        @dialog-ref="assignDialogRef"
+    >
+      <template v-slot:title>
+        <span>Your dialog title</span>
+      </template>
+      <div>
+        <p>Your content</p>
+      </div>
+    </a11y-dialog>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: 'YourComponent',
+  data: () => ({
+    dialog: null
+  }),
+
+  methods: {
+    openDialog() {
+      if (this.dialog) {
+        this.dialog.show()
+      }
+    },
+
+    assignDialogRef(dialog) {
+      this.dialog = dialog
+    }
   }
 }
 </script>

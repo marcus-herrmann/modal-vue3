@@ -1,5 +1,5 @@
 {
-  "name": "v3package-test",
+  "name": "modal-vue3",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -17,8 +17,9 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0"
+    "eslint": "^7.22.0",
+    "eslint-plugin-vue": "^7.7.0",
+    "vue-a11y-dialog-next": "^1.1.0"
   },
   "eslintConfig": {
     "root": true,
